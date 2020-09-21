@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="hakuy-dongker">
+    <ion-buttons slot="start">
+      <ion-back-button color="hk-white-red"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Konfirmasi Pembayaran</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="hk-tweet">
+  <ion-item Lines="full" color="hk-tweet">
+    <h5 style="font-weight: bold;">Status Parkir</h5>
+  </ion-item>
+
+  <ion-item button Lines="inset">
+    <ion-label>Nopol Kendaraan</ion-label>
+    <ion-label class="ion-text-right" style="color: grey;">{{txtNopolKendaraan}}</ion-label>
+  </ion-item>
+
+  <ion-item button Lines="inset">
+    <ion-label>Nama</ion-label>
+    <ion-label class="ion-text-right" style="color: grey;">{{txtNama}}</ion-label>
+  </ion-item>
+
+  <ion-item button Lines="inset">
+    <ion-label>Saldo User</ion-label>
+    <ion-label class="ion-text-right" style="color: grey;">{{txtSaldo}}</ion-label>
+  </ion-item>
+
+  <ion-item button Lines="inset">
+    <ion-label>Jam Masuk</ion-label>
+    <ion-label class="ion-text-right" style="color: grey;">{{txtJamMasuk}}</ion-label>
+  </ion-item>
+
+  <ion-item button Lines="full">
+    <ion-label>Biaya</ion-label>
+    <ion-label class="ion-text-right" style="color: grey;">{{txtBiaya}}</ion-label>
+  </ion-item>
+
+  <ion-item button Lines="full">
+    <ion-label>Jenis Pembayaran</ion-label>
+    <ion-select mode="ios" [(ngModel)]="jenisPembayaran">
+      <ion-select-option value="Cash" selected>Cash</ion-select-option>
+      <ion-select-option value="Saldo eWallet">Saldo eWallet</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <hr style="height: 12px; background-color: var(--ion-color-hk-tweet); margin-top: 0px; margin-bottom: 0px;"
+    no-padding>
+  <hr style="height: 0.5px; background-color: #cecece; margin-top: 0px; margin-bottom: 0px;" no-padding>
+
+  <ion-item button Lines="full">
+    <ion-label class="ion-text-center" color="hk-red" (click)="Cancel()">Batalkan</ion-label>
+  </ion-item>
+
+  <hr style="height: 12px; background-color: var(--ion-color-hk-tweet); margin-top: 0px; margin-bottom: 0px;"
+    no-padding>
+  <hr style="height: 0.5px; background-color: #cecece; margin-top: 0px; margin-bottom: 0px;" no-padding>
+
+  <ion-item button Lines="full">
+    <ion-label class="ion-text-center" color="hk-red" (click)="Confirm()">Konfirmasi</ion-label>
+  </ion-item>
+</ion-content>

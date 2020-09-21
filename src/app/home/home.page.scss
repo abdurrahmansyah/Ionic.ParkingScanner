@@ -1,0 +1,66 @@
+ion-card {
+    --background: #ffffff;
+    box-shadow: none;
+}
+
+.ios ion-card {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    // color: var(--ion-color-light);
+
+    @media screen and (min-width: 1024px) {
+        font-size: 32px;
+    }
+}
+
+// p {
+//     // color: var(--ion-color-light);
+// }
+
+ion-content {
+    --background: #f0f0f0;
+}
+
+ion-footer {
+    background: #f0f0f0;
+}
+
+.text {
+    padding-top: 65%;
+    position: absolute;
+    left: 0;
+    right: 0;
+  
+    @media screen and (min-width: 568px) {
+      padding-top: 22%;
+    }
+  
+    @media screen and (min-width: 640px) {
+      padding-top: 25%;
+    }
+  
+    @media screen and (min-width: 768px) {
+      padding-top: 735px;
+    }
+  
+    @media screen and (min-width: 812px) {
+      padding-top: 24%;
+    }
+  
+    @media screen and (min-width: 928px) {
+      padding-top: 96%;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      padding-top: 55%;
+    }
+  
+    @media screen and (min-width: 1381px) {
+      padding-top: 14%;
+    }
+  }
