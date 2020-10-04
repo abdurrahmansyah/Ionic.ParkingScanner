@@ -296,6 +296,7 @@ export class ParkingData {
   public parking_id: string;
   public parking_user_id: string;
   public parking_user_name: string;
+  public parking_user_tipe_kendaraan: string;
   public parking_user_nopol_kendaraan: string;
   public parking_user_saldo_member: string;
   public parking_park_lot_id: string;

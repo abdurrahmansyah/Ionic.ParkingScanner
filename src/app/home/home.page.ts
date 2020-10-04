@@ -133,11 +133,11 @@ export class HomePage {
         var parkingData = this.MappingParkingDataFromDb(parkingDataFromDb);
         var parkingDateData = this.globalService.GetDateWithDateParam(parkingData.parking_waktu_masuk);
 
-        var parkingId = parkingData.parking_id;
-        var parkingDate = parkingDateData.szDay + ", " + parkingDateData.decDate + " " + parkingDateData.szMonth + " " + parkingDateData.decYear;
-        var parkingAreaParkir = parkingData.parking_park_lot_name;
-        var parkingJamMasuk = parkingDateData.szHour + ":" + parkingDateData.szMinute;
-        var parkingBiaya = this.ReturnBiaya(parkingData, parkingDateData);
+        // var parkingId = parkingData.parking_id;
+        // var parkingDate = parkingDateData.szDay + ", " + parkingDateData.decDate + " " + parkingDateData.szMonth + " " + parkingDateData.decYear;
+        // var parkingAreaParkir = parkingData.parking_park_lot_name;
+        // var parkingJamMasuk = parkingDateData.szHour + ":" + parkingDateData.szMinute;
+        // var parkingBiaya = this.ReturnBiaya(parkingData, parkingDateData);
 
         this.PilihPembayaran(parkingData, parkingDateData);
       }
@@ -152,6 +152,7 @@ export class HomePage {
     parkingData.parking_park_lot_biaya_mobil = parkingDataFromDb.park_lot_biaya_mobil;
     parkingData.parking_user_id = parkingDataFromDb.user_id;
     parkingData.parking_user_name = parkingDataFromDb.user_name;
+    parkingData.parking_user_tipe_kendaraan = parkingDataFromDb.user_tipe_kendaraan;
     parkingData.parking_user_nopol_kendaraan = parkingDataFromDb.user_nopol_kendaraan;
     parkingData.parking_user_saldo_member = parkingDataFromDb.user_saldo_member;
     parkingData.parking_id = parkingDataFromDb.parking_id;
@@ -181,7 +182,7 @@ export class HomePage {
   }
 
   private ReturnBiaya(parkingData: ParkingData, parkingDateData: DateData): string {
-    var biaya = this.globalService.userData.user_tipe_kendaraan == "Motor" ? parkingData.parking_park_lot_biaya_motor : parkingData.parking_park_lot_biaya_mobil;
+    var biaya = parkingData.parking_user_tipe_kendaraan == "Motor" ? parkingData.parking_park_lot_biaya_motor : parkingData.parking_park_lot_biaya_mobil;
     var date = new Date();
 
     var totalHour = date.getHours() - parkingDateData.decHour;
